@@ -4,7 +4,12 @@ const router = express.Router();
 const data = require("./data/ads.json");
 
 router.get("/", (req, res) => {
-  res.send(data[0]);
+  const { page: pageIndex = 1 } = req.query;
+  const page = data.find(item => item.page === pageIndex);
+
+  if (!page) res.status(404);
+
+  res.send(page);
 });
 
 router.get("/:itemId", (req, res) => {

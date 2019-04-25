@@ -11,10 +11,8 @@
     }
   },
   "globals": {
-    "btoa": "readonly",
-    "FormData": "readonly",
-    "document": "readonly",
-    "Element": "readonly"
+    "fetch": "readonly",
+    "document": "readonly"
   },
   "rules": {
     "react/jsx-filename-extension": [
