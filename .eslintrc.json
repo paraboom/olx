@@ -1,0 +1,71 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    }
+  },
+  "globals": {
+    "btoa": "readonly",
+    "FormData": "readonly",
+    "document": "readonly",
+    "Element": "readonly"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prop-types": [
+      1,
+      {
+        "ignore": [
+          "children"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": 0,
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "jsx-a11y/click-events-have-key-events": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ],
+    "react/destructuring-assignment": [
+      2,
+      "always",
+      {
+        "ignoreClassFields": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ]
+  }
+}

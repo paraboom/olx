@@ -1,10 +1,11 @@
-const express = require('express')
-const app = express()
-const {port} = require('./config')
-const api = require('./api')
+const express = require("express");
 
-app.use('/api', api)
+const app = express();
+const { port } = require("./config");
+const api = require("./api");
 
-app.use(express.static('public'))
+app.use("/api", api);
 
-app.listen(port, () => console.log(`Server is running on ${port}`))
+app.use(express.static("public"));
+
+app.listen(port, () => console.log(`Server is running on ${port}`));
