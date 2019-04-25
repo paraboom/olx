@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const {port} = require('./config')
+const api = require('./api')
 
-app.get('/api', (req, res) => res.send('Express server'))
+app.use('/api', api)
 
 app.use(express.static('public'))
 
