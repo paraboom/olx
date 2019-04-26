@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
 import { Link } from "react-router-dom";
-import style from "./style.m.css";
+import Item from "../Item";
 
 const ListItem = ({
   id,
@@ -12,19 +11,18 @@ const ListItem = ({
   city_label: cityLabel,
   params,
   className,
-}) => {
-  const classNames = classnames(style.item, className);
-
-  return (
-    <Link to={`/list/${id}`} className={classNames}>
-      <span>{title}</span>
-      <span>{created}</span>
-      <span>{description}</span>
-      <span>{cityLabel}</span>
-      <span>{params}</span>
-    </Link>
-  );
-};
+}) => (
+  <Link to={`/list/${id}`} className={className}>
+    <Item
+      title={title}
+      created={created}
+      creates={created}
+      description={description}
+      cityLabel={cityLabel}
+      params={params}
+    />
+  </Link>
+);
 const listItemPropTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

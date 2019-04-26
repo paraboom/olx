@@ -9,8 +9,6 @@ export default ({ match }) => {
   const api = useContext(ApiContext);
   const [data, setData] = useState();
 
-  console.log(data);
-
   useEffect(() => {
     // we could do it without async/await, just like to use it here :)
     const fetchData = async () => {
@@ -24,7 +22,7 @@ export default ({ match }) => {
   return (
     <>
       <Header withItem />
-      <Item {...data} />
+      {data ? <Item {...data} cityLabel={data.city_label} /> : null}
     </>
   );
 };

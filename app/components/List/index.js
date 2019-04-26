@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Item, { listItemPropTypes } from "../ListItem";
+import ListItem, { listItemPropTypes } from "../ListItem";
 import styles from "./style.m.css";
 
 const List = ({ items }) => {
@@ -8,7 +8,7 @@ const List = ({ items }) => {
 
   return (
     <section className={styles.items}>
-      {items.map(item => <Item className={styles.item} key={item.id} {...item} />)}
+      {items.map(item => <ListItem className={styles.item} key={item.id} {...item} />)}
     </section>
   );
 };
