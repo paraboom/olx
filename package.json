@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "start": "node server.js",
     "start:server": "nodemon --exec babel-node server.js",
     "start:dev": "webpack-dev-server",
     "lint": "eslint . --fix"
