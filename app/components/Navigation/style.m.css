@@ -1,0 +1,17 @@
+.navigation {
+  margin-top: 20px;
+}
+
+.navigation ul {
+  padding: 0 20px;
+}
+
+.navigation li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navigation a {
+  color: blue;
+  font-weight: bold;
+}

@@ -5,7 +5,7 @@ const data = require("./data/ads.json");
 
 router.get("/", (req, res) => {
   const { page: pageIndex = 1 } = req.query;
-  const page = data.find(item => item.page === pageIndex);
+  const page = data.find(item => item.page === parseInt(pageIndex, 10));
 
   if (!page) res.status(404);
 

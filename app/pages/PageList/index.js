@@ -5,7 +5,9 @@ import List from "../../components/List";
 import Navigation from "../../components/Navigation";
 import Header from "../../components/Header";
 
-export default () => {
+export default ({ location }) => {
+  const params = new URLSearchParams(location.search);
+  const page = params.get("page");
   const api = useContext(ApiContext);
   const [data, setData] = useState();
   const [pages, setPages] = useState();
@@ -13,8 +15,7 @@ export default () => {
   useEffect(() => {
     // we could do it without async/await, just like to use it here :)
     const fetchData = async () => {
-      if (data) return;
-      const res = await api.get("/");
+      const res = await api.get(page ? `/?page=${page}` : "/");
       setData(res.ads);
       setPages({
         currentPage: res.page,
@@ -22,7 +23,8 @@ export default () => {
       });
     };
     fetchData();
-  }, [api, data]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   return (
     <>
