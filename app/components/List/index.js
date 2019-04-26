@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Item, { itemPropTypes } from "../Item";
+import Item, { listItemPropTypes } from "../ListItem";
+import styles from "./style.m.css";
 
 const List = ({ items }) => {
   if (!items) return null;
 
   return (
-    <div className="items">
-      {items.map(item => <Item key={item.id} {...item} />)}
-    </div>
+    <section className={styles.items}>
+      {items.map(item => <Item className={styles.item} key={item.id} {...item} />)}
+    </section>
   );
 };
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)),
+  items: PropTypes.arrayOf(PropTypes.shape(listItemPropTypes)),
 };
 List.defaultProps = {
   items: null,

@@ -15,6 +15,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: [/\.m\.css$/],
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ],
+      },
+      {
+        test: /\.m\.css$/,
         use: [
           { loader: "style-loader" },
           {
@@ -24,6 +32,12 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: "svg-loader",
+        },
       },
     ],
   },

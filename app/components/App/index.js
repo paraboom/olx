@@ -11,14 +11,15 @@ import { ApiProvider } from "../../utils/api";
 import PageList from "../../pages/PageList";
 import PageListItem from "../../pages/PageListItem";
 
+import "./style.css";
+
 const App = () => (
   <BrowserRouter>
     <ApiProvider>
       <Layout>
-        <div>Hello</div>
         <Switch>
           <Route exact path="/list" component={PageList} />
-          <Route path="/list/aaa" component={PageListItem} />
+          <Route path="/list/:itemId" component={PageListItem} />
           <Redirect to="/list" />
         </Switch>
       </Layout>

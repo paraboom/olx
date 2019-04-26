@@ -3,6 +3,7 @@ import ApiContext from "../../utils/api";
 
 import List from "../../components/List";
 import Navigation from "../../components/Navigation";
+import Header from "../../components/Header";
 
 export default () => {
   const api = useContext(ApiContext);
@@ -25,6 +26,7 @@ export default () => {
 
   return (
     <>
+      <Header />
       <List items={data} />
       {pages ? <Navigation {...pages} /> : null}
     </>

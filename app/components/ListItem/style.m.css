@@ -1,0 +1,12 @@
+.item {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s linear;
+}
+
+.item:hover {
+  background: hsla(0, 0%, 95%)
+}

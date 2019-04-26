@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import style from "./style.css";
+import styles from "./style.m.css";
 
 const Item = ({
   id,
@@ -10,7 +10,7 @@ const Item = ({
   city_label: cityLabel,
   params,
 }) => (
-  <div className={style.item}>
+  <div className={styles.item}>
     <span>{id}</span>
     <span>{title}</span>
     <span>{created}</span>
@@ -19,7 +19,8 @@ const Item = ({
     <span>{params}</span>
   </div>
 );
-const itemPropTypes = {
+
+Item.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   created: PropTypes.string.isRequired,
@@ -27,7 +28,5 @@ const itemPropTypes = {
   city_label: PropTypes.string.isRequired,
   params: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };
-Item.propTypes = itemPropTypes;
 
 export default Item;
-export { itemPropTypes };
